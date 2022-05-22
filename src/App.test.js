@@ -1,8 +1,9 @@
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import App from './App'
 
 describe('App component', () => {
 	test('it renders', () => {
 		render(<App />)
+		expect(screen.getByText('Users:')).toBeInTheDocument()
 	})
 })
