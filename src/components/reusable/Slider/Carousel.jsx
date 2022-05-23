@@ -29,7 +29,8 @@ export const Carousel = () => {
         return(
           <div className={slideIndex === index + 1 ? 'slide active-anim' : 'slide'} key={img.id}>
             <img
-            src={process.env.PUBLIC_URL + `/images/img${index + 1}.jpg`}
+            // src={process.env.PUBLIC_URL + `/images/img${index + 1}.jpg`}
+            src={img.photo}
             alt=""
             />
           </div>
