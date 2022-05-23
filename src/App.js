@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from 'react'
 import ReactSwitch from 'react-switch'
 import { formatUserName } from './utils'
 import axios from 'axios'
-
+import { Carousel } from './components/reusable/Slider/Carousel'
 export const ThemeContext = createContext(null)
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
 					<label> {theme === 'light' ? 'Light Mode' : 'Dark Mode'}</label>
 					<ReactSwitch onChange={toggleTheme} checked={theme === 'dark'} />
 				</div>
-
+				<Carousel />
 				<div>Users:</div>
 				{users.length ? (
 					<ul data-testid='user-list'>

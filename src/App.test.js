@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react'
 import App from './App'
 
 describe('App component', () => {
-	test('it renders', () => {
+    test('it displays a list of users', async () => {
 		render(<App />)
-		expect(screen.getByText('Users:')).toBeInTheDocument()
-	})
+        const userList = await screen.findByTestId('user-list')
+        expect(userList).toBeInTheDocument() })
 })
