@@ -4,6 +4,8 @@ import ReactSwitch from 'react-switch'
 import { formatUserName } from './utils'
 import axios from 'axios'
 import { Carousel } from './components/reusable/Slider/Carousel'
+import { Card } from './components/reusable/Card/Card'
+import TrafficLight from './components/TrafficLight/TrafficLight'
 export const ThemeContext = createContext(null)
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
 	const toggleTheme = () => {
 		setTheme((curr) => (curr === 'light' ? 'dark' : 'light'))
 	}
+	console.log('user is', users)
 	return (
 		<ThemeContext.Provider value={{ theme, toggleTheme }}>
 			<div className='App' id={theme}>
@@ -32,21 +35,23 @@ function App() {
 					<label> {theme === 'light' ? 'Light Mode' : 'Dark Mode'}</label>
 					<ReactSwitch onChange={toggleTheme} checked={theme === 'dark'} />
 				</div>
+				<TrafficLight/>
 				<Carousel />
-				<div>Users:</div>
-				{users.length ? (
-					<ul data-testid='user-list'>
-						{users.map((user) => (
-							<li key={user.id} className='user' data-testid='user-item'>
-								<span>{user.name}</span> (
-								<span>{formatUserName(user.username)}</span>)
-							</li>
-						))}
-					</ul>
-				) : (
-					<div>Loading users...</div>
-				)}
-
+				<div className='user'>
+					{users.length ? (
+						<ul data-testid='user-list'>
+							{users.map((user) => (
+								<li key={user.id} data-testid='user-item'>
+									<Card user={user} />
+									{/* <span>{user.name}</span> (
+								<span>{formatUserName(user.username)}</span>) */}
+								</li>
+							))}
+						</ul>
+					) : (
+						<div>Loading users...</div>
+					)}
+				</div>
 			</div>
 		</ThemeContext.Provider>
 	)

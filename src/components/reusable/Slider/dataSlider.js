@@ -24,18 +24,18 @@ const dataSlider = [
     title: "Lorem ipsum",
     subTitle: "Lorem"
   },
-  {
-    id: uuidv4(),
-    photo: laptop,
-    title: "Lorem ipsum",
-    subTitle: "Lorem"
-  },
-  {
-    id: uuidv4(),
-    photo: sunrise,
-    title: "Lorem ipsum",
-    subTitle: "Lorem"
-  },
+  // {
+  //   id: uuidv4(),
+  //   photo: laptop,
+  //   title: "Lorem ipsum",
+  //   subTitle: "Lorem"
+  // },
+  // {
+  //   id: uuidv4(),
+  //   photo: sunrise,
+  //   title: "Lorem ipsum",
+  //   subTitle: "Lorem"
+  // },
 ];
 
 export default dataSlider;

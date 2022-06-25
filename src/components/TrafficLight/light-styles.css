@@ -1,0 +1,17 @@
+.traffic-light > div {
+  border: 1px solid black;
+  /* display: flex; */
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.green {
+  background-color: green;
+}
+.orange {
+  background-color: orange;
+}
+.red {
+  background-color: red;
+}
